@@ -3,10 +3,15 @@
 A simple portal with ads with two user interfaces: MVC5 and angularjs.
 
 It was my first use of:
+
 -> entity framework (i used to use nhibernate)
+
 -> mvc framewrok from visual studio
+
 -> automapper
+
 -> SpecFlow and Gherkin language
+
 -> SignalR
 
 I am used to work with very big projects where I add new features and fix bugs. 
