@@ -1,0 +1,26 @@
+﻿<div style="padding:9px 6px;">
+    <div id="AdGrid" class="gridStyle" ui-grid="gc.gridOptions"
+         ng-show="gc.ads.length > 0"
+         ui-grid-auto-resize ui-grid-pagination ui-grid-edit ui-grid-row-edit ui-grid-resize-columns ui-grid-cellnav ui-grid-selection></div>
+    <div class="text-muted text-center" ng-show="gc.ads.length == 0">
+        <h2>No records</h2>
+    </div>
+
+    <form>
+        <div>
+            Search Params:
+            <input type="text" class="form-control input-md" id="title" name="title" placeholder="Title" ng-model="SearchParams.Title" />
+            <input type="text" class="form-control input-md" id="description" name="description" placeholder="Description" ng-model="SearchParams.Description" />
+            <select ng-model="SearchParams.SellerID">
+                <option ng-repeat="seller in Sellers" value="{{seller.Id}}">{{seller.UserName}}</option>
+            </select>
+            </select>
+            <input type="text" class="form-control input-md" id="priceFrom" name="priceFrom" placeholder="PriceFrom" ng-model="SearchParams.PriceFrom" />
+            <input type="text" class="form-control input-md" id="priceTo" name="priceTo" placeholder="PriceTo" ng-model="SearchParams.PriceTo" />
+            <button class="btn btn-success" type="submit" ng-click="Search()">
+                <i class="glyphicon glyphicon-search" />
+                Search
+            </button>
+        </div>
+    </form>
+</div>

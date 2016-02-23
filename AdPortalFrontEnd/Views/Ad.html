@@ -1,0 +1,18 @@
+﻿<div style="background:#F2F2F2; margin-bottom:50px;">
+    Id: {{ad.Id}}
+    Seller: {{ad.Seller}}
+    <form id="single_personalDataForm" data-toggle="validator" role="form">
+
+        <input type="text" class="form-control input-md row" id="title" name="title" placeholder="Title" ng-model="ad.Title" />
+        <input type="text" class="form-control input-md row" id="description" name="description" placeholder="Description" ng-model="ad.Description" />
+        <input type="text" class="form-control input-md" id="price" name="price" placeholder="Price" ng-model="ad.Price" />
+
+
+        <button class="btn btn-warning" type="submit" ng-disabled="!IsOwner" ng-click="Edit()">
+            <i class="glyphicon glyphicon-ok" />
+            Change 
+        </button>
+
+    </form>
+
+</div>
