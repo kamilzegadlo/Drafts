@@ -1,0 +1,358 @@
+﻿.activated {
+	opacity: 1;
+}
+.deactivated {
+	opacity: 0.5;
+}
+.cover {
+    background: url('../img/background.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-black {
+    background: #333333;
+    color: white;
+}
+
+.navbar-transparent {
+    background: #000000;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+}
+
+.navbar-home .navbar-nav > li > a  {
+    color: #1a1a1a;
+}
+
+.navbar-black .navbar-nav > li > a {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-home .navbar-toggle:hover, .navbar-home .navbar-toggle:focus {
+background-color: #ddd;
+}
+.navbar-home .navbar-toggle {
+    border-color: #ddd;
+    background: #f8f8f8;
+}
+
+.navbar-home .navbar-toggle .icon-bar {
+background-color: #888;
+}
+
+.grey {
+    background: #e6e6e6;
+}
+
+.dark-grey {
+    background: #CCCCCC;
+}
+.centered {
+    margin-top: 18px;
+}
+
+.col:not(:first-child),.col:not(:last-child) {
+  padding-right:7px;
+  padding-left:7px;
+}
+
+.btn-response-type, .btn-response-type:hover
+{
+    -ms-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: black;
+    font-weight: 700;
+    -ms-opacity: 0.5;
+    opacity: 0.5;
+    border-right: #1a1a1a 1px solid;
+}
+
+.btn-response-type:last-child {
+    border-right: none;
+}
+
+.btn-response-type.active {
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    -ms-opacity: 1;
+    opacity: 1;
+}
+
+.btn-status, .btn-status:hover{
+    background: #666666;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    color: white;
+    font-weight: 700;
+}
+
+.btn-status.active {
+    background: #1A1A1A;
+    color: white;
+}
+
+
+
+.responseGridStyle {
+    height: 237px;
+}
+
+  .container {
+    -webkit-transition: display ease-in 500ms;
+    transition: display ease-in 500ms;
+  }
+
+  .base-class.my-class {
+    color: red;
+    font-size:3em;
+  }
+
+  .navbar-home  .navbar-nav > li{
+      margin-left:7px;
+      margin-right:7px;
+}
+
+  .black {
+    background: #1a1a1a;
+    color: white;
+    height: 215px;
+  }
+
+  .risk-count {
+      font-size: 6em;
+      font-weight: bold;
+  }
+
+  #risk-status-table tr:first-child td {
+      border: none;
+  }
+
+  .risk-filter-link,
+  .risk-filter-link:hover,
+  .risk-filter-link:focus {
+      color: white;
+  }
+  .grey .risk-filter-link {
+      color: black;
+  }
+
+ .expander {
+    background: none repeat scroll 0 0 #1a1a1a;
+    cursor: pointer;
+    padding: 10px;
+}
+.header {
+    background: none repeat scroll 0 0 #e6e6e6;
+    font-weight: 700;
+    padding: 10px;
+}
+.scoring-header {
+    background: none repeat scroll 0 0 #666666;
+    font-weight: 700;
+    padding: 10px;
+    color: white;
+}
+.sidebar {
+    margin-bottom: 5px;
+}
+.review-comment {
+    background: none repeat scroll 0 0 white;
+    margin-bottom: 2px;
+    padding: 5px;
+}
+.detail-section {
+    background: none repeat scroll 0 0 white;
+    padding: 20px;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave,
+.list-repeat-item.ng-move {
+  -webkit-transition:  all linear .25s;
+  -moz-transition:  all linear .25s;
+  -o-transition:  all linear .25s;
+  transition:  all linear .25s;
+}
+
+.repeat-item.ng-enter {
+    opacity: 0;
+}
+
+.repeat-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.repeat-item.ng-leave {
+  opacity: 1;
+}
+.repeat-item.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.repeat-item.ng-move {
+  left:2px;
+  opacity: 0.5;
+}
+.repeat-item.ng-move.ng-move-active {
+  left:0;
+  opacity: 1;
+}
+
+.btn-black {
+    color: #fff;
+    background-color: #1A1A1A;
+    font-weight: bolder;
+    border-color: #1A1A1A;
+   -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.btn-black:hover,
+.btn-black:focus,
+.btn-black:active,
+.btn-black.active,
+.open > .dropdown-toggle.btn-default {
+  background-color: #333;
+  color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.btn-scoring {
+    border: none;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+select.ng-invalid,
+select.ng-invalid:invalid,
+textarea.ng-invalid,
+textarea.ng-invalid:invalid,
+input.ng-invalid,
+input.ng-invalid:invalid {
+	background: lightpink;
+	border: 1px solid red;
+}
+
+a.expander-link {
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.expander-header {
+    background:#1a1a1a!important;
+    color:white!important;
+    padding:10px;
+    cursor: pointer
+}
+
+.risk-level {
+    border-radius: 0;
+    padding: 6px 12px;
+}
+
+.form-group-condensed {
+    margin-bottom: 4px;
+}
+
+.grid-cell-hidden {
+	background: lightgray !important;
+	border: 1px solid white;
+}
+
+.grid-cell-mandatory {
+	background: pink !important;
+	border: 1px solid white;
+}
+
+input.form-control {
+    -ms-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+#gridSearch::-ms-clear {
+    display: none;
+}
+#gridSearchClear {
+    top: 0; right: 0; position: absolute;
+}
+button#gridSearchClear {
+    -ms-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.btn span.glyphicon {
+    top: 2px;
+}
+
+/* centered columns styles from http://www.minimit.com/demos/bootstrap-3-responsive-centered-columns */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.col-centered.content {
+    text-align:center;
+}
+
+.row-right {
+    text-align:right;
+}
+.col-right {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:right;
+}
+
+.panel-body.form-panel-body {
+    padding: 6px 12px;
+}
+
+.navbar-transparent .panel-body {
+    color: black;
+}
+.btn-link:hover, .btn-link:focus {
+    text-decoration: none;
+}
+.navbar-nav>li>button {
+    padding-top: 15px;
+    font-weight: bold;
+}
+.navbar-inverse .btn-link {
+  color: #FFF;
+}
+
+.applicationAlert {
+    cursor: pointer;
+	white-space: pre-line;
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	z-index: 7000;
+}
+
+div.ui-grid-cell input.input-sm {
+    height: 30px;
+}
+
+a#aLoggedUser:hover {
+    background-color: #ffffff;
+}
