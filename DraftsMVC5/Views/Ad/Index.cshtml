@@ -1,0 +1,115 @@
+﻿@using System.Data.Common
+@model DraftsMVC5.ViewModels.GridViewModel
+
+@{
+    ViewBag.Title = "Grid";
+}
+
+<p>
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-warning", })
+}
+</p>
+
+<p>
+    We have <span id="AdCount"></span> ads in our database. (SignalR)
+</p>
+
+<table id="PropertyAdGrid" class="table table-hover">
+    <tr class="success">
+        <th>
+            @Html.DisplayNameFor(model => model.Ads.FirstOrDefault().Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ads.FirstOrDefault().Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ads.FirstOrDefault().SellerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ads.FirstOrDefault().Price)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+
+
+    @{ int iItem = 0;
+ foreach (var item in Model.Ads)
+ {
+    <tr class="success">
+        <td id="0-@Model.CurrentPage-@iItem">
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td id="1-@Model.CurrentPage-@iItem">
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td id="2-@Model.CurrentPage-@iItem">
+            @Html.DisplayFor(modelItem => item.AspNetUser.UserName)
+        </td>
+        <td id="3-@Model.CurrentPage-@iItem">
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td id="4-@Model.CurrentPage-@iItem">
+
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { id = "Details" + item.Id, @class = "btn btn-default", role = "button" })
+            @if (User.Identity.Name == item.AspNetUser.UserName)
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { id="Edit"+item.Id, @class = "btn btn-primary", role = "button" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { id = "Delete" + item.Id, @class = "btn btn-danger", role = "button" })
+            }
+
+        </td>
+    </tr>
+            ++iItem;
+ }
+}
+    <tr>
+        <td colspan="5">
+
+            @for (int i = 0; i < Model.PageCount; ++i)
+            {
+                object httmlAttributes;
+                if (i == Model.CurrentPage)
+                {
+                    httmlAttributes = new { id="Page"+i, @class = "btn btn-success", role = "button" };
+                }
+                else
+                {
+                    httmlAttributes = new { id="Page"+i, @class = "btn btn-danger", role = "button" };
+                }
+                
+                @Html.ActionLink((i + 1).ToString(), "GetPageRecords", new { searchParamsJson = Newtonsoft.Json.JsonConvert.SerializeObject(Model.SearchParams), pageNumber = i }, httmlAttributes)
+            }
+
+
+        </td>
+    </tr>
+
+</table>
+
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(function () {
+            var adHub = $.connection.adHub;
+            adHub.client.setActualCountOfAds = function (count) {
+                $('#AdCount').text(htmlEncode(count));
+            };
+
+            $.connection.hub.start().done(function () {
+                adHub.server.getActualCountOfAds();
+            });
+        });
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+}
+
+
